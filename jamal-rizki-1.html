@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font: normal 15px sans-serif;
+            color: #555;
+            letter-spacing: 2px;
+        }
+
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 100px 80px;
+        }
+
+        hr {
+            width: 250px;
+            height: 3px;
+            background-color: #d5d0cd;
+            border: 0;
+            margin-bottom: 50px;
+        }
+
+        section h3.title {
+            text-transform: capitalize;
+            font: bold 32px "Open Sans", sans-serif;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        section p {
+            max-width: 775px;
+            line-height: 2;
+            padding: 0 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        @media (max-width: 800px) {
+            section {
+                padding: 50px 20px;
+            }
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: inline-block;
+        }
+
+        nav ul li {
+            font-size: 14px;
+            position: relative;
+            margin: 0 14px 0 0;
+            display: inline-block;
+        }
+
+        nav ul li a {
+            padding: 20px;
+            display: inline-block;
+            color: #393939;
+            text-decoration: none;
+        }
+
+        nav ul li:hover {
+            background: #37bc9b;
+            border-radius: 5px 5px 0px 0px;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            left: 0;
+            background: #37bc9b;
+            border-radius: 0px 5px 5px 5px;
+        }
+
+        nav ul li ul li:active {
+            background: #37bc9b;
+        }
+
+        nav ul li ul li {
+            margin: 0px -5px -5px 0px;
+            color: white;
+            width: 100%;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        nav ul li ul li a {
+            color: white;
+            font-size: 11px;
+            text-shadow: 1px 1px black;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li:hover {
+            background-color: #019966;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #019966;
+        }
+
+        @media (max-width: 800px) {
+            section {
+                padding: 50px 20px;
+            }
+        }
+
+        /*Header Section*/
+
+        header {
+            position: fixed;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 100px 1px 10px;
+            animation: 1s fadein 0.5s forwards;
+            opacity: 0;
+            color: #383838;
+            background-color: #fff;
+            border-bottom: 7px #34cc99 solid;
+        }
+
+        h2 a {
+            text-decoration: none;
+            color: #383838;
+            margin-left: 80px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bolder;
+            font-size: 1.2em;
+        }
+
+        .hero h1 {
+            font-family: 'Nothing You Could Do', cursive;
+            font-size: 120px;
+            margin-bottom: 15px;
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+
+        #example2 {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            padding: 15px;
+            opacity: 0;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            animation: 1s slidefade 1s forwards;
+            
+        }
+
+        .hero h3 {
+            font: normal 28px "Open Sans", sans-serif;
+            margin-bottom: 40px;
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+
+        @keyframes slidefade {
+            100% {
+                opacity: 1;
+                margin: 0;
+            }
+        }
+
+        @keyframes fadein {
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /*Hero Section*/
+
+        .hero {
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+
+        .hero .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            z-index: -1;
+            background-color: #80a3db;
+            
+        }
+
+        @media (max-width: 800px) {
+            header {
+                padding: 20px 50px;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            header h2 a {
+                margin-bottom: 15px;
+            }
+
+            h2 a {
+                margin-left: 0px;
+            }
+
+            .hero {
+                height: 100vh;
+
+            }
+
+            .hero h1 {
+                font-size: 70px;
+            }
+
+            nav ul li a {
+                padding: 2px;
+            }
+
+            nav ul li ul li {
+                display: none;
+            }
+        }
+
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+
+            11.11% {
+                opacity: 1;
+            }
+
+            33.33% {
+                opacity: 1;
+            }
+
+            44.44% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .fadein {
+            position: relative;
+            height: 332px;
+            width: 500px;
+            outline: 1px solid blue;
+            z-index: -1;
+        }
+
+        .fadein img {
+            position: absolute;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            animation-name: fade;
+            animation-duration: 12s;
+            animation-iteration-count: infinite;
+            height: 332px;
+            width: 500px;
+        }
+
+        .fadein img:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .fadein img:nth-child(2) {
+            animation-delay: 3s;
+        }
+
+        .fadein img:nth-child(3) {
+            animation-delay: 6s;
+        }
+
+        .fadein img:nth-child(4) {
+            animation-delay: 9s;
+        }
+
+        .fadein img:nth-child(5) {
+            animation-delay: 12s;
+        }
+
+        /*grid Section*/
+        .grid {
+            z-index: -1;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .packages .grid li {
+            padding: 50px;
+            flex-basis: 50%;
+            text-align: center;
+            list-style-type: none;
+
+        }
+
+        .packages .grid li i {
+            color: #34cc99;
+        }
+
+        .packages .grid li h4 {
+            font-size: 30px;
+            margin: 25px 0;
+
+        }
+
+        @media (max-width: 800px) {
+            .packages .grid li {
+                flex-basis: 100%;
+                padding: 20px;
+            }
+        }
+
+        /*Testimonials Section*/
+
+        .testimonials .quote {
+            font-size: 22px;
+            font-weight: 300;
+            line-height: 1.5;
+            margin: 40px 0 25px;
+        }
+
+        @media (max-width: 800px) {
+            .testimonials .quote {
+                font-size: 18px;
+                margin: 15px 0;
+            }
+
+            .testimonials .author {
+                font-size: 14px;
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 40px 0;
+        }
+
+        /*card section */
+
+        .card {
+            z-index: -2;
+            width: 30.3333333333%;
+            margin: 1%;
+            padding: 30px;
+            border-radius: 8px;
+            position: relative;
+            transition: .3s all;
+            box-shadow: 0 2px 5px 0 rgba(3, 6, 26, 0.15);
+            text-align: center;
+        }
+
+        @media screen and (max-width: 1240px) {
+            .card {
+                width: 48%;
+            }
+        }
+
+        @media screen and (max-width: 820px) {
+            .card {
+                width: 98%;
+                margin-top: 2%;
+                margin-bottom: 2%;
+
+            }
+
+            .card .button {
+                left: 35%;
+            }
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        h3 {
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 60px;
+        }
+
+
+        .button {
+            position: absolute;
+            left: 30%;
+            bottom: 30px;
+            font-size: 14px;
+            color: white;
+            background: rgba(0, 0, 0, .2);
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 10000px;
+            transition: .3s all;
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, .8);
+            color: #2e2e2e;
+        }
+
+        .pad-top {
+            padding-top: 20px;
+        }
+
+        .card-green {
+            background: #37bc9b;
+            color: white;
+        }
+
+        .card-yellow {
+            background: #d5d0cd;
+            color: white;
+        }
+
+        .card-blue-dark {
+            background: #66b2d6;
+            color: white;
+        }
+
+
+
+        /*Footer Section*/
+
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: #fff;
+            color: #393939;
+            padding: 20px 0;
+            flex-direction: column;
+
+        }
+
+        footer ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        footer ul li {
+            margin-left: 16px;
+
+        }
+
+        footer ul li a {
+            margin-left: 16px;
+            text-decoration: none;
+
+        }
+
+        #snap {
+            color: #FFFC00;
+        }
+
+        #facebook {
+            color: #4267B2;
+        }
+
+        #twitter {
+            color: #1DA1F2;
+        }
+
+        footer p {
+            text-transform: uppercase;
+            font-size: 14px;
+            opacity: 0.6;
+            align-self: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+    <title>GETUWIRED</title>
+</head>
+
+<!-- header -->
+
+<body>
+    <header>
+        <h2><a href="#">GETUWIRED</a></h2>
+        <nav>
+            <ul>
+                <li><a href="#">ABOUT</a>
+                    <ul>
+                        <li><a href="#">OUR STORY</a></li>
+                        <li> <a href="#">OUR COMMITMENT TO YOU</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">LOCATIONS</a>
+                    <ul>
+                        <li><a href="#">AUSTIN, TX</a></li>
+                        <li> <a href="#">ATLANTA, GA</a></li>
+                        <li><a href="#">SEATTLE, WA</a></li>
+                        <li><a href="#">PORTLAND, OR</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">PRODUCTS</a>
+                    <ul>
+                        <li><a href="#">NEW ARRIVALS</a></li>
+                        <li><a href="#">FEATURED</a></li>
+                        <li><a href="#">TOP RATED</a></li>
+                        <li><a href="#">HIS</a></li>
+                        <li><a href="#">HERS</a></li>
+                        <li><a href="#">KIDS</a></li>
+                        <li><a href="#">ACCESSORIES</a></li>
+                        <li><a href="#">SPRING CATALOG</a></li>
+                        <li><a href="#">THE ESSENTIALS</a></li>
+                        <li><a href="#">SALE</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- header-end -->
+
+    <!-- hero-section -->
+    <section class="hero">
+        <div class="background-image"
+            style="background-image: url(http://www.getuwired.com/devtest/Death_to_stock_photography_Vibrant.jpg);">
+        </div>
+        <div id='example2' class="hero-content-area">
+            <h1>GETUWIRED</h1>
+        </div>
+    </section>
+    <!-- hero-section-end -->
+
+    <!-- carousel-section -->
+    <section class="destinations">
+        <h3 id="result" class="title"></h3>
+        <p id='bd'></p>
+        <hr>
+        <div class="fadein">
+            <image id="image"></image>
+            <image id="image1"></image>
+            <image id="image2"></image>
+            <image id="image3"></image>
+            <image id="image4"></image>
+        </div>
+    </section>
+    <!-- carousel-section-end -->
+
+    <!-- grid-section -->
+    <section class="packages">
+        <h3 id="result2" class="title"></h3>
+        <p id='bd2'></p>
+        <hr>
+        <ul class="grid">
+            <li>
+                <i class="fa fa-venus fa-4x"></i>
+                <h4>Hers</h4>
+                <p id="grid"></p>
+            </li>
+            <li>
+                <i class="fa fa-mars fa-4x"></i>
+                <h4>His</h4>
+                <p id="grid1"></p>
+            </li>
+            <li>
+                <i class="fa fa-child fa-4x"></i>
+                <h4>Kids</h4>
+                <p id="grid2"></p>
+            </li>
+            <li>
+                <i class="fa fa-search fa-4x"></i>
+                <h4>search</h4>
+                <p id="grid3">.</p>
+            </li>
+        </ul>
+    </section>
+    <!-- grid-section-end -->
+
+    <!-- testimonial-section -->
+    <section class="testimonials">
+        <h3 class="title">Testimonials</h3>
+        <hr>
+        <p id="comment" class="quote"></p>
+        <p id='name' class="author"></p>
+        <p id="comment1" class="quote"></p>
+        <p id='name1' class="author"></p>
+        <p id="comment2" class="quote"></p>
+        <p id='name2' class="author"></p>
+    </section>
+    <!-- testimonial-section-end -->
+
+    <!-- card-section -->
+    <section>
+        <h3 id="result1" class="title"></h3>
+        <p id='bd1'></p>
+        <hr>
+        <div class="content">
+            <div class="card card-green">
+                <h3 id="cardheader"></h3>
+                <p id='cardbd'></p>
+                <div class="pad-top"><a href="#" class="button">Learn More</a></div>
+            </div>
+            <div class="card card-yellow">
+                <h3 id="cardheader1"></h3>
+                <p id='cardbd1'></p>
+                <div class="pad-top"><a href="#" class="button">Learn More</a></div>
+            </div>
+            <div class="card card-blue-dark">
+                <h3 id="cardheader2"></h3>
+                <p id='cardbd2'></p>
+                <div class="pad-top"><a href="#" class="button">Learn More</a></div>
+            </div>
+        </div>
+    </section>
+    <!-- card-section-end -->
+
+    <!-- footer-section -->
+    <footer>
+        <p>Images courtesy of JSON Placeholder</p>
+        <ul>
+            <li><a href="#"><i id="twitter" class="fa fa-twitter-square fa-2x"></i></a></li>
+            <li><a href="#"><i id="facebook" class="fa fa-facebook-square fa-2x"></i></a></li>
+            <li><a href="#"><i id="snap" class="fa fa-snapchat-square fa-2x"></i></a></li>
+        </ul>
+    </footer>
+    <!-- footer-section-end -->
+
+</body>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(function (response) {
+                return response.json()
+            })
+            .then((response) => {
+                console.log(response)
+                var bd = document.getElementById('bd')
+                var result = document.getElementById('result')
+                var bd1 = document.getElementById('bd1')
+                var result1 = document.getElementById('result1')
+                var bd2 = document.getElementById('bd2')
+                var result2 = document.getElementById('result2')
+                var cardbd = document.getElementById('cardbd')
+                var cardheader = document.getElementById('cardheader')
+                var cardbd1 = document.getElementById('cardbd1')
+                var cardheader1 = document.getElementById('cardheader1')
+                var cardbd2 = document.getElementById('cardbd2')
+                var cardheader2 = document.getElementById('cardheader2')
+                result.innerHTML = response[0].title
+                bd.innerHTML = response[0].body
+                result1.innerHTML = response[1].title
+                bd1.innerHTML = response[1].body
+                result2.innerHTML = response[2].title
+                bd2.innerHTML = response[2].body
+                cardheader.innerHTML = response[3].title
+                cardbd.innerHTML = response[3].body
+                cardheader1.innerHTML = response[4].title
+                cardbd1.innerHTML = response[4].body
+                cardheader2.innerHTML = response[5].title
+                cardbd2.innerHTML = response[5].body
+            })
+
+        fetch('https://jsonplaceholder.typicode.com/photos')
+            .then(function (response) {
+                return response.json()
+            })
+            .then((response) => {
+                var image = document.getElementById('image').src = response[0].url
+                var image1 = document.getElementById('image1').src = response[2].url
+                var image2 = document.getElementById('image2').src = response[3].url
+                var image3 = document.getElementById('image3').src = response[5].url
+                var image4 = document.getElementById('image4').src = response[7].url
+            })
+
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(function (response) {
+                return response.json()
+            })
+            .then((response) => {
+                console.log(response)
+                var name = document.getElementById('name')
+                var name1 = document.getElementById('name1')
+                var name2 = document.getElementById('name2')
+                name.innerHTML = response[0].name
+                name1.innerHTML = response[1].name
+                name2.innerHTML = response[2].name
+            })
+
+        fetch('https://jsonplaceholder.typicode.com/comments')
+            .then(function (response) {
+                return response.json()
+            })
+            .then((response) => {
+                console.log(response)
+                var comment = document.getElementById('comment')
+                var comment1 = document.getElementById('comment1')
+                var comment2 = document.getElementById('comment2')
+                var grid = document.getElementById('grid')
+                var grid1 = document.getElementById('grid1')
+                var grid2 = document.getElementById('grid2')
+                var grid3 = document.getElementById('grid3')
+
+                comment.innerHTML = response[0].body
+                comment1.innerHTML = response[1].body
+                comment2.innerHTML = response[2].body
+                grid.innerHTML = response[3].body
+                grid1.innerHTML = response[4].body
+                grid2.innerHTML = response[5].body
+                grid3.innerHTML = response[6].body
+
+            })
+
+    });
+</script>
+
+</html>
